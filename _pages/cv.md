@@ -9,56 +9,69 @@ redirect_from:
 
 {% include base_path %}
 
+
+
 Education
 ======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+* M.S  in **Mathematics**, University of British Columbia (**UBC**), 2023-
+* M.S. in **Biomedical Engineering**, University of British Columbia(**UBC**), 2021-2023
+* B.S. in **Physics**, Sharif University of Techonology (**SUT**), 2016-2021
 
 Work experience
 ======
-* Spring 2024: Academic Pages Collaborator
-  * Github University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+* 2023 - 2025 (expected): Research Assitant
+  * University of British Columbia
+  * Duties included: Modeling the renormalization mechanism in microvasculature
+  * Supervisor: Dr. Leah Keshet
 
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+
+* 2021 - 2023: Research Assistant
+  * University of British Columbia
+  * Duties included: Simulation of the pharmacokinetic of radiopharmaceuticals to optimize radiopharmaceutical therapy
+  * Supervisor: Dr. Arman Rahmim
+  * Link to my thesis: 
+
+
+* Summer 2019: Summer Student at CERN, Geneva, Switzerland
+  * Duties includes: Simulating the particle-particle interaction to optimize the trapping efficiency to produce anti-hydrogen. Plus some basic PCB design.
+  * Supervisor: Dr. Muhammed Sameed
+  * Link to my project report: 
+
+
   
-Skills
+<!-- Programming Languages
 ======
-* Skill 1
+* Programming
 * Skill 2
   * Sub-skill 2.1
   * Sub-skill 2.2
   * Sub-skill 2.3
-* Skill 3
+* Skill 3 -->
 
 Publications
 ======
   <ul>{% for post in site.publications reversed %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
+
+
+Software Projects
+======
+* 
   
-Talks
+<!-- Talks
 ======
   <ul>{% for post in site.talks reversed %}
     {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
+  {% endfor %}</ul> -->
   
-Teaching
+<!-- Teaching
 ======
   <ul>{% for post in site.teaching reversed %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
-  
+   -->
 Service and leadership
 ======
 * Currently signed in to 43 different slack teams
