@@ -10,7 +10,12 @@ redirect_from:
 {% include base_path %}
 
 
+<<<<<<< HEAD
 Edud
+=======
+
+Education
+>>>>>>> 3fb84eb1408e25b59f8e53b9c65cc76bf9858a92
 ======
 * M.S  in **Mathematics**, University of British Columbia (**UBC**), 2023-
 * M.S. in **Biomedical Engineering**, University of British Columbia(**UBC**), 2021-2023
