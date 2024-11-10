@@ -14,6 +14,9 @@ main:
   - title: "Lecture Notes"
     url: /lecture-notes/
 
+  - title: "Projects"
+    url: /projects/
+
   # - title: "Talks"
   #   url: /talks/    
 

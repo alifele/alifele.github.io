@@ -7,12 +7,10 @@ author_profile: true
 ---
 
 
-This is About me!
-
-<br/><img src='/images/ali2.jpg'>
-<br/><img src='/images/ali3.jpg'>
-<br/><img src='/images/ali4.jpg'>
-<br/><img src='/images/ali5.jpg'>
-<br/><img src='/images/ali1.jpg'>
-
-
+<div class="image-grid">
+    <img src="/images/ali2.jpg" alt="Image 1">
+    <img src="/images/ali3.jpg" alt="Image 2">
+    <img src="/images/ali4.jpg" alt="Image 3">
+    <img src="/images/ali5.jpg" alt="Image 4">
+    <img src="/images/ali1.jpg" alt="Image 5">
+</div>

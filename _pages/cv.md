@@ -38,6 +38,15 @@ Work experience
   * Link to my project report: 
 
 
+<iframe src="/files/paper2.pdf" width="100%" height="500" frameborder="no" border="0" marginwidth="0" marginheight="0">
+You can download it here
+</iframe>
+
+<iframe src ="https://github.com/alifele/Lecture-Notes/blob/main/ProbabilityANDStochasticProcesses/NewVersion/notes.pdf
+" width="100%" height="500" frameborder="no" border="0" marginwidth="0" marginheight="0">
+You can download it here
+</iframe>
+
   
 <!-- Programming Languages
 ======

@@ -223,7 +223,10 @@ collections:
   portfolio:
     output: true
     permalink: /:collection/:path/
-  talks:
+  # talks:
+  #   output: true
+  #   permalink: /:collection/:path/
+  projects:
     output: true
     permalink: /:collection/:path/
 
@@ -275,14 +278,23 @@ defaults:
       author_profile: true
       share: true
       comment: true
-  # _talks
+  # _projects
   - scope:
       path: ""
-      type: talks
+      type: projects
     values:
       layout: talk
       author_profile: true
       share: true
+
+  # # _projects
+  # - scope:
+  #     path: ""
+  #     type: projects
+  #   values:
+  #     layout: talk
+  #     author_profile: true
+  #     share: true
 
 
 # Sass/SCSS
