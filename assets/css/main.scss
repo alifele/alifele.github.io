@@ -61,7 +61,7 @@
 .image-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjust 150px as needed */
-    gap: 10px; /* Space between images */
+    gap: 20px; /* Space between images */
 }
 
 .image-grid img {
