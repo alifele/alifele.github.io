@@ -1,3 +1,18 @@
+<!-- {% include base_path %}
+
+<div class="{{ include.type | default: "list" }}__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    <div class="archive__item-teaser">
+      <img src="{{ post.image | prepend: base_path }}" alt="{{ post.title }}">
+    </div>
+    <h2 class="archive__item-title" itemprop="headline">
+      <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ post.title }}</a>
+    </h2>
+    <p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify }}</p>
+  </article>
+</div> -->
+
+
 {% include base_path %}
 
 {% if post.header.teaser %}
