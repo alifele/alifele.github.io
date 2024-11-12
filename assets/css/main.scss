@@ -72,3 +72,88 @@
 }
 
 
+
+
+// // Compact publication style for archive items
+// .archive__item {
+//     margin-bottom: 10px; // Decrease space between items
+  
+//     h2.archive__item-title {
+//       font-size: 1rem; // Reduce title font size
+//       margin-bottom: 5px; // Tighten up space below title
+//     }
+  
+//     p.page__meta,
+//     p.archive__item-excerpt,
+//     p {
+//       font-size: 0.875rem; // Smaller font for journal, date, and other meta info
+//       margin-bottom: 5px; // Tighten up spacing for meta info
+//     }
+  
+//     a {
+//       font-size: 0.875rem; // Consistent font size for download links
+//       color: #007acc; // Customize color as preferred
+//     }
+  
+//     // Optional: Adjust icon sizes if you have icons in this section
+//     i.fa-fw {
+//       font-size: 0.75rem; // Smaller icon size
+//       margin-right: 5px; // Adjust space between icon and text
+//     }
+  
+//     .archive__item-teaser {
+//       display: none; // Hide image teaser to make it more compact (optional)
+//     }
+//   }
+  
+
+// Compact publication style with vertical line between items
+.archive__item {
+    margin-bottom: 10px; // Space between items
+  
+    // Vertical line between items
+    position: relative;
+    padding-left: 20px; // Adjust based on line placement
+  
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0; // Place line at the start of each item
+      width: 1px; // Adjust line width
+      background-color: #02325f; // Color of the vertical line
+      height: 100%;
+      transform: translateX(-50%);
+    }
+  
+    h2.archive__item-title {
+      font-size: 1rem;
+      margin-bottom: 3px;
+    }
+  
+    p.page__meta,
+    p.archive__item-excerpt,
+    p {
+      font-size: 0.875rem;
+      margin-bottom: 3px;
+    }
+  
+    a {
+      font-size: 0.875rem;
+      color: #007acc;
+    }
+  
+    i.fa-fw {
+      font-size: 0.75rem;
+      margin-right: 5px;
+    }
+  }
+
+
+  .archive__item-authors {
+    font-size: 0.75rem;   // Smaller font size for authors
+    color: #888;          // Gray color for text
+    margin-top: 5px;      // Add spacing above to separate from other text
+    font-style: italic;   // Optional: Italicize to distinguish it
+  }
