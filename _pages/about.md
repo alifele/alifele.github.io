@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Hello There! This is Ali Fele Paranj!"
+title: "Ali Fele Paranj"
 author_profile: true
 redirect_from: 
   - /about/
@@ -8,7 +8,11 @@ redirect_from:
 ---
 ## About Me
 
-Hello! I'm **Ali Fele Paranj**, a master's student in **mathematics** at **UBC** in Vancouver, Canada. I completed my undergraduate studies in **physics** (2016-2021) at **Sharif University of Technology** in Tehran, Iran. I also hold a master's degree in **biomedical engineering** from UBC (2021-2023).
+<img src="images/ising-field.png" alt="ising" style="float: left; width: 250px; margin-right: 5px; margin-bottom: 30px;"/>
+
+My name is Ali **Ali Fele Paranj**, a master's student in **mathematics** at **UBC** in Vancouver, Canada. I completed my undergraduate studies in **physics** (2016-2021) at **Sharif University of Technology** in Tehran, Iran. I also hold a master's degree in **biomedical engineering** from UBC (2021-2023).
+
+<div style="clear: both;"></div>
 
 ### Research Interests
 
@@ -17,7 +21,8 @@ My research interests span several fields:
 - **Stochastic Processes**
 - **Statistical Physics**
 - **Numerical Analysis**
-- **Coding** (with an emphasis on continual learning and improvement!)
+- **Coding** 
+
 
 ### Projects & Hobbies
 
