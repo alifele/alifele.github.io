@@ -5,17 +5,20 @@ permalink: /lecture-notes/
 author_profile: true
 gallery:
   - image_path: "lecturenotes/complex.png"
-    alt: "Lecture Note 1"
-    url: "https://example.com/note1.pde"
+    alt: "Complex Analysis"
+    url: "https://github.com/alifele/Lecture-Notes/blob/27af1c82b110bace93471e41fb54e8d5ce169a09/ComplexAnalysis/NewVersion/notes.pdf"
+
   - image_path: "lecturenotes/manifolds.png"
-    alt: "Lecture Note 2"
-    url: "https://example.com/note2.pde"
+    alt: "Manifolds"
+    url: "https://github.com/alifele/Lecture-Notes/blob/27af1c82b110bace93471e41fb54e8d5ce169a09/DifferentialGeometry/Manifolds/notes.pdf"
+
   - image_path: "lecturenotes/probability.png"
-    alt: "Lecture Note 2"
-    url: "https://example.com/note2.pde"
+    alt: "Probability Theory"
+    url: "https://github.com/alifele/Lecture-Notes/blob/27af1c82b110bace93471e41fb54e8d5ce169a09/ProbabilityANDStochasticProcesses/NewVersion/notes.pdf"
+
   - image_path: "lecturenotes/realAnalysis.png"
-    alt: "Lecture Note 2"
-    url: "https://example.com/note2.pde"
+    alt: "Real Analysis"
+    url: "https://github.com/alifele/Lecture-Notes/blob/27af1c82b110bace93471e41fb54e8d5ce169a09/Real%20Analysis/Lecture%20Notes/notes.pdf"
   # Add more images and URLs as needed
 ---
 

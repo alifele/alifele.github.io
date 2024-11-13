@@ -37,7 +37,7 @@ Work experience
   * Supervisor: Dr. Muhammed Sameed
   * Link to my project report: 
 
-
+<!-- 
 <iframe src="/files/paper2.pdf" width="100%" height="500" frameborder="no" border="0" marginwidth="0" marginheight="0">
 You can download it here
 </iframe>
@@ -45,7 +45,7 @@ You can download it here
 <iframe src ="https://github.com/alifele/Lecture-Notes/blob/main/ProbabilityANDStochasticProcesses/NewVersion/notes.pdf
 " width="100%" height="500" frameborder="no" border="0" marginwidth="0" marginheight="0">
 You can download it here
-</iframe>
+</iframe> -->
 
   
 <!-- Programming Languages
@@ -56,7 +56,7 @@ You can download it here
   * Sub-skill 2.2
   * Sub-skill 2.3
 * Skill 3 -->
-
+<!-- 
 Publications
 ======
   <ul>{% for post in site.publications reversed %}
@@ -66,7 +66,7 @@ Publications
 
 Software Projects
 ======
-* 
+*  -->
   
 <!-- Talks
 ======
@@ -80,6 +80,6 @@ Software Projects
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
    -->
-Service and leadership
+<!-- Service and leadership
 ======
-* Currently signed in to 43 different slack teams
+* Currently signed in to 43 different slack teams -->
