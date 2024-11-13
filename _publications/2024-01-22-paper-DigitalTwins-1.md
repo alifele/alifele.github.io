@@ -7,7 +7,7 @@ excerpt: 'In this paper, which was supported by my findings in the simulations, 
 date: 2022-12-15
 venue: 'Front. Oncol.'
 paperurl: 'https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2022.1062592/full'
-authors: "A Rahmim, J. Brosch-Lenz, *A Fele-Paranj, F. Yousefirizi, M. Soltani, C. Uribe, B. Saboury"
+authors: "A. Rahmim, J. Brosch-Lenz, *A. Fele-Paranj, F. Yousefirizi, M. Soltani, C. Uribe, B. Saboury"
 ---
 
 This paper came out of "digital twins" reasearch idea for radiopharaceuticals therapy. My findings in several conference papers and the sub-sequent discussions where the main builidig blocks for this paper.

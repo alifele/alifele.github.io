@@ -1,5 +1,5 @@
 ---
-title: "Summer Student Program at CERN"
+title: "Summer Student Program at CERN (ALPHA-G Experiment, Antimatter Factory)"
 collection: projects
 type: "Master's Thesis"
 permalink: /projects/CERN

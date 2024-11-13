@@ -17,12 +17,12 @@ My name is Ali **Ali Fele Paranj**, a master's student in **mathematics** at **U
 ### Research Interests
 
 My research interests span several fields:
-- **Optimal Transport**
+- **Probabilty Theory**
 - **Stochastic Processes**
+- **Optimal Transport**
 - **Statistical Physics**
 - **Numerical Analysis**
-- **Coding** 
-
+- **Software Development** 
 
 ### Projects & Hobbies
 
