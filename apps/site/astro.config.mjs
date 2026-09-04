@@ -12,4 +12,5 @@ export default defineConfig({
             title: "Ali Fele Paranj - Software Documentation"
           })
     ]
+
 });
