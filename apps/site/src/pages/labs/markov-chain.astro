@@ -1,0 +1,118 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Markov Chain Laboratory">
+  <section class="hero">
+    <p class="eyebrow">Laboratory</p>
+    <h1>Markov Chain Demonstration</h1>
+    <p class="lead">
+      This example illustrates a 2-state Markov chain with transitions between states A and B.
+    </p>
+  </section>
+
+  <div class="stack">
+    <div class="card">
+      <label>
+        Transition A → B probability: <strong id="p-value">0.35</strong>
+        <input id="p-slider" type="range" min="0.05" max="0.95" step="0.01" value="0.35" />
+      </label>
+    </div>
+
+    <div class="card">
+      <label>
+        Transition B → A probability: <strong id="q-value">0.25</strong>
+        <input id="q-slider" type="range" min="0.05" max="0.95" step="0.01" value="0.25" />
+      </label>
+    </div>
+
+    <div class="card">
+      <canvas id="chain-canvas" width="860" height="220" style="width:100%; border:1px solid #dfe7f5; border-radius:12px; background:#f8fafc;"></canvas>
+    </div>
+  </div>
+</BaseLayout>
+
+<script>
+  const canvas = document.getElementById('chain-canvas');
+  const ctx = canvas.getContext('2d');
+  const pSlider = document.getElementById('p-slider');
+  const qSlider = document.getElementById('q-slider');
+  const pValue = document.getElementById('p-value');
+  const qValue = document.getElementById('q-value');
+
+  let state = 0;
+  let history = [];
+
+  function updateLabels() {
+    pValue.textContent = Number(pSlider.value).toFixed(2);
+    qValue.textContent = Number(qSlider.value).toFixed(2);
+  }
+
+  function draw() {
+    const width = canvas.width;
+    const height = canvas.height;
+
+    ctx.clearRect(0, 0, width, height);
+
+    ctx.fillStyle = '#0f172a';
+    ctx.font = '18px sans-serif';
+    ctx.fillText('State A', 30, 45);
+    ctx.fillText('State B', 30, 170);
+
+    ctx.strokeStyle = '#dfe7f5';
+    ctx.beginPath();
+    ctx.moveTo(140, 60);
+    ctx.lineTo(width - 40, 60);
+    ctx.moveTo(140, 150);
+    ctx.lineTo(width - 40, 150);
+    ctx.stroke();
+
+    const xMax = Math.min(history.length, 24);
+    const xStep = (width - 180) / xMax;
+
+    for (let i = 0; i < xMax; i++) {
+      const y = history[i] === 0 ? 60 : 150;
+      const x = 170 + i * xStep;
+
+      ctx.fillStyle = '#2563eb';
+      ctx.beginPath();
+      ctx.arc(x, y, 5, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    ctx.fillStyle = '#1f2937';
+    ctx.fillText('Current state: ' + (state === 0 ? 'A' : 'B'), width - 180, 40);
+
+    const p = Number(pSlider.value);
+    const q = Number(qSlider.value);
+
+    ctx.fillStyle = '#475569';
+    ctx.font = '14px sans-serif';
+    ctx.fillText(`A → B = ${p.toFixed(2)}`, 180, 30);
+    ctx.fillText(`B → A = ${q.toFixed(2)}`, 180, 190);
+  }
+
+  function step() {
+    const p = Number(pSlider.value);
+    const q = Number(qSlider.value);
+    const transition = Math.random();
+
+    if (state === 0) {
+      state = transition < p ? 1 : 0;
+    } else {
+      state = transition < q ? 0 : 1;
+    }
+
+    history.push(state);
+    if (history.length > 24) history.shift();
+    draw();
+    requestAnimationFrame(step);
+  }
+
+  pSlider.addEventListener('input', updateLabels);
+  qSlider.addEventListener('input', updateLabels);
+
+  updateLabels();
+  draw();
+  requestAnimationFrame(step);
+</script>

@@ -1,0 +1,25 @@
+---
+title: "Molecular Simulation"
+format:
+  html:
+    toc: true
+---
+
+# Molecular Simulation
+
+Molecular simulation combines statistical mechanics with numerical integration to estimate system behavior.
+
+The central challenge is to sample configurations from a distribution such as
+
+$$
+\pi(x) \propto e^{-\beta U(x)}.
+$$
+
+This supports methods such as Metropolis Monte Carlo and molecular dynamics.
+
+## Typical goals
+
+- estimate equilibrium averages
+- study structural properties
+- compare simulation and theory
+- visualize trajectories and observables

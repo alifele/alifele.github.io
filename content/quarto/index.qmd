@@ -1,13 +1,26 @@
 ---
 title: "Computational Notes"
+format:
+  html:
+    toc: true
 ---
 
 # Computational Notes
 
-These are executable notes on mathematical and computational topics.
+This section demonstrates reproducible scientific writing using Quarto. It is intended for mathematical derivations, executable examples, and numerical experiments.
+
+## Topics
+
+- Brownian motion and diffusion
+- Markov chains and transition matrices
+- Monte Carlo methods
+- Statistical mechanics models
+- Simulation and validation notes
+
+## Example
 
 $$
-dX_t = \sqrt{2D}\,dW_t
+\frac{\partial p}{\partial t} = D \frac{\partial^2 p}{\partial x^2}
 $$
 
-I use these notes for reproducible computational experiments.
+This diffusion equation is the continuum analogue of a random walk and a key concept in many simulation studies.

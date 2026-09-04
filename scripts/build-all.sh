@@ -1,76 +1,36 @@
 #!/usr/bin/env bash
-
 set -euo pipefail
 
-ROOT="$(pwd)"
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
-rm -rf _build
-mkdir -p _build
-
-
-echo "===== Building WebAssembly ====="
-
-if command -v em++ >/dev/null 2>&1
-then
-
-    em++ wasm/hello/add.cpp \
-        -O2 \
-        -sMODULARIZE=1 \
-        -sEXPORT_ES6=1 \
-        -sEXPORTED_RUNTIME_METHODS='["ccall","cwrap"]' \
-        -o apps/site/public/wasm/add.js
-
-else
-    echo "Emscripten not installed; skipping WASM build."
+if [ -s "$HOME/.nvm/nvm.sh" ]; then
+  . "$HOME/.nvm/nvm.sh"
+  nvm use 22 >/dev/null 2>&1 || true
 fi
 
+mkdir -p "$ROOT/_build"
 
-echo "===== Building Astro ====="
+echo "==> Building Astro"
+"$ROOT/scripts/build-astro.sh"
 
-cd "$ROOT/apps/site"
+mkdir -p "$ROOT/_build"
+cp -a "$ROOT/apps/site/dist/." "$ROOT/_build/"
 
-npm run build
+echo "==> Syncing Obsidian notes"
+"$ROOT/scripts/sync-notes.sh"
 
-cd "$ROOT"
+echo "==> Building Quartz"
+"$ROOT/scripts/build-quartz.sh"
+mkdir -p "$ROOT/_build/notes"
+cp -a "$ROOT/apps/quartz/public/." "$ROOT/_build/notes/"
 
-cp -a apps/site/dist/. _build/
+echo "==> Building Quarto notes"
+"$ROOT/scripts/build-quarto.sh"
+mkdir -p "$ROOT/_build/computational-notes"
+if [ -d "$ROOT/content/quarto/_site" ]; then
+  cp -a "$ROOT/content/quarto/_site/." "$ROOT/_build/computational-notes/"
+fi
 
+touch "$ROOT/_build/.nojekyll"
 
-echo "===== Building Quartz ====="
-
-./scripts/sync-notes.sh
-
-cd "$ROOT/apps/quartz"
-
-# npx quartz build
-npm run quartz -- build
-
-cd "$ROOT"
-
-mkdir -p _build/notes
-
-cp -a apps/quartz/public/. _build/notes/
-
-
-echo "===== Building Quarto ====="
-
-cd "$ROOT/content/quarto"
-
-quarto render
-
-cd "$ROOT"
-
-mkdir -p _build/computational-notes
-
-cp -a content/quarto/_site/. \
-      _build/computational-notes/
-
-
-echo "===== Disable Jekyll ====="
-
-touch _build/.nojekyll
-
-
-echo "===== Build complete ====="
-
-echo "_build/"
+echo "==> Build complete"

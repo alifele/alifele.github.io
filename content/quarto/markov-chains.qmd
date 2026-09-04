@@ -1,0 +1,25 @@
+---
+title: "Markov Chains"
+format:
+  html:
+    toc: true
+---
+
+# Markov Chains
+
+A Markov chain describes transitions between states with probabilities that depend only on the current state.
+
+$$
+P(X_{n+1}=j \mid X_n=i) = P_{ij}
+$$
+
+For a 2-state chain,
+
+$$
+P = \begin{pmatrix}
+1-\alpha & \alpha \\
+\beta & 1-\beta
+\end{pmatrix}
+$$
+
+The long-time behavior of the chain depends on the structure of this matrix, especially the stationary distribution and mixing properties.

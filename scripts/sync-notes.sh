@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
-
 set -euo pipefail
 
-rm -rf apps/quartz/content
-mkdir -p apps/quartz/content
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
-cp -a content/obsidian/. apps/quartz/content/
+rm -rf "$ROOT/apps/quartz/content"
+mkdir -p "$ROOT/apps/quartz/content"
+cp -a "$ROOT/content/obsidian/." "$ROOT/apps/quartz/content/"
+
+echo "Synced Obsidian notes into apps/quartz/content"

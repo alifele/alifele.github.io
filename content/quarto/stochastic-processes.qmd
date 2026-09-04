@@ -1,29 +1,33 @@
 ---
-title: "Brownian Motion"
+title: "Stochastic Processes"
 jupyter: python3
+format:
+  html:
+    code-fold: true
 ---
 
-The stochastic differential equation is
+# Stochastic Processes
+
+A simple diffusion model can be written as
 
 $$
-dX_t = \sqrt{2D}\,dW_t.
+\mathrm{d}X_t = \sqrt{2D}\,\mathrm{d}W_t.
 $$
 
-In two dimensions,
-
-$$
-\mathbb E\left[|X_t-X_0|^2\right]=4Dt.
-$$
+This form models a Brownian motion with diffusion coefficient $D$.
 
 ```{python}
 import numpy as np
 
 D = 1.0
 dt = 0.01
-N = 1000
+N = 2000
 
 increments = np.sqrt(2 * D * dt) * np.random.randn(N)
 trajectory = np.cumsum(increments)
 
-trajectory[:10]
+print(trajectory[:10])
+print(f"Mean displacement: {trajectory[-1]:.3f}")
 ```
+
+This example can be expanded with plots, parameter sweeps, and more detailed diagnostics.

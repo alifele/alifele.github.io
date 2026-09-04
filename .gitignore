@@ -1,13 +1,19 @@
-# Ignore the contents of the _site directory and other cache directories
+# Generated output
+_build/
 _site/
+apps/site/dist/
+apps/quartz/public/
+apps/quartz/.quartz-cache/
+content/quarto/_site/
+content/quarto/_freeze/
 .sass-cache/
 
-# Ignore the directory for local files during development
+# Local dev files
 local/
 
-# Ignore the Gemfile that is generated
-Gemfile.lock
+# Dependency directories
+node_modules/
+**/node_modules/
 
-# Ingore files created by npm
-node_modules
-package-lock.json
+# OS/editor files
+.DS_Store

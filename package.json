@@ -1,5 +1,18 @@
 {
-  "dependencies": {
-    "22": "^0.0.0"
+  "name": "alifele-github-io",
+  "private": true,
+  "version": "1.0.0",
+  "packageManager": "npm@10.9.2",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "./scripts/dev.sh",
+    "build:astro": "./scripts/build-astro.sh",
+    "sync:notes": "./scripts/sync-notes.sh",
+    "build:quartz": "./scripts/build-quartz.sh",
+    "build:quarto": "./scripts/build-quarto.sh",
+    "build:all": "./scripts/build-all.sh",
+    "preview": "cd apps/site && npm run preview -- --host 0.0.0.0"
   }
 }
