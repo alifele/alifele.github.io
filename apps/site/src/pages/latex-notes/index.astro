@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { latexNotes } from '../../data/latexNotes';
+---
+
+<BaseLayout title="LaTeX Notes | Your Name">
+  <section class="hero">
+    <p class="eyebrow">LaTeX Notes</p>
+    <h1>Lecture notes (PDF archive)</h1>
+    <p class="lead">
+      This page lists PDF lecture notes authored in LaTeX. Click a title to open it in a new browser tab.
+    </p>
+  </section>
+
+  <div class="stack">
+    {latexNotes.map((note) => (
+      <article class="card">
+        <h2>{note.title}</h2>
+        <p><strong>Course:</strong> {note.course}</p>
+        <p><strong>Semester:</strong> {note.semester}</p>
+        <p>{note.description}</p>
+        <p>
+          <a href={note.path} target="_blank" rel="noopener noreferrer">
+            Open PDF in a new tab →
+          </a>
+        </p>
+      </article>
+    ))}
+  </div>
+
+  <section class="section">
+    <h2>Where to place your PDF notes</h2>
+    <p>
+      Put each lecture note PDF under <code>apps/site/public/latex-notes/</code> with folders per subject or course.
+      Then update <code>apps/site/src/data/latexNotes.ts</code> to list each note.
+    </p>
+  </section>
+</BaseLayout>

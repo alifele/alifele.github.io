@@ -7,13 +7,50 @@ on:
       - master
   workflow_dispatch:
 
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: read
   pages: write
   id-token: write
 
 jobs:
+  changes:
+    runs-on: ubuntu-latest
+    outputs:
+      astro: ${{ steps.filter.outputs.astro }}
+      quartz: ${{ steps.filter.outputs.quartz }}
+      quarto: ${{ steps.filter.outputs.quarto }}
+      docs: ${{ steps.filter.outputs.docs }}
+      workflow: ${{ steps.filter.outputs.workflow }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            astro:
+              - 'apps/site/**'
+              - 'scripts/build-astro.sh'
+            quartz:
+              - 'apps/quartz/**'
+              - 'content/obsidian/**'
+              - 'scripts/sync-notes.sh'
+              - 'scripts/build-quartz.sh'
+            quarto:
+              - 'content/quarto/**'
+              - 'scripts/build-quarto.sh'
+            docs:
+              - 'README.md'
+              - 'deploy.md'
+            workflow:
+              - '.github/workflows/deploy.yml'
+              - 'scripts/build-all.sh'
+
   build:
+    needs: changes
     runs-on: ubuntu-latest
 
     steps:
@@ -30,15 +67,39 @@ jobs:
             apps/quartz/package-lock.json
 
       - name: Install Quarto
+        if: ${{ needs.changes.outputs.quarto == 'true' || needs.changes.outputs.workflow == 'true' }}
         uses: quarto-dev/quarto-actions/setup@v2
 
-      - name: Install dependencies
-        run: |
-          cd apps/site && npm ci
-          cd ../quartz && npm ci
+      - name: Install Astro dependencies
+        if: ${{ needs.changes.outputs.astro == 'true' || needs.changes.outputs.workflow == 'true' || needs.changes.outputs.docs == 'true' || needs.changes.outputs.quartz == 'true' || needs.changes.outputs.quarto == 'true' }}
+        run: cd apps/site && npm ci
 
-      - name: Build full site
-        run: ./scripts/build-all.sh
+      - name: Install Quartz dependencies
+        if: ${{ needs.changes.outputs.quartz == 'true' || needs.changes.outputs.workflow == 'true' }}
+        run: cd apps/quartz && npm ci
+
+      - name: Sync notes
+        if: ${{ needs.changes.outputs.quartz == 'true' || needs.changes.outputs.workflow == 'true' }}
+        run: ./scripts/sync-notes.sh
+
+      - name: Build Quartz and publish to Astro public
+        if: ${{ needs.changes.outputs.quartz == 'true' || needs.changes.outputs.workflow == 'true' }}
+        run: ./scripts/build-quartz.sh
+
+      - name: Build Quarto and publish to Astro public
+        if: ${{ needs.changes.outputs.quarto == 'true' || needs.changes.outputs.workflow == 'true' }}
+        run: ./scripts/build-quarto.sh
+
+      - name: Build Astro site
+        if: ${{ needs.changes.outputs.astro == 'true' || needs.changes.outputs.quartz == 'true' || needs.changes.outputs.quarto == 'true' || needs.changes.outputs.workflow == 'true' || needs.changes.outputs.docs == 'true' }}
+        run: cd apps/site && npm run build
+
+      - name: Skip (no deployable changes)
+        if: ${{ needs.changes.outputs.astro != 'true' && needs.changes.outputs.quartz != 'true' && needs.changes.outputs.quarto != 'true' && needs.changes.outputs.workflow != 'true' && needs.changes.outputs.docs != 'true' }}
+        run: |
+          echo "No website changes detected."
+          mkdir -p apps/site/dist
+          echo "<html><body>No deployable changes.</body></html>" > apps/site/dist/index.html
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
