@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Labs | Your Name">
+  <section class="hero">
+    <p class="eyebrow">Labs</p>
+    <h1>Interactive laboratory notebooks</h1>
+    <p class="lead">
+      Short, focused experiments for exploring stochastic systems and computational models.
+    </p>
+  </section>
+
+  <div class="grid">
+    <article class="card">
+      <h2>Brownian motion</h2>
+      <p>Diffusion as a random walk driven by Gaussian increments.</p>
+      <a href="/labs/brownian/">Launch →</a>
+    </article>
+    <article class="card">
+      <h2>Ornstein-Uhlenbeck</h2>
+      <p>Mean-reverting process under Gaussian forcing.</p>
+    </article>
+    <article class="card">
+      <h2>Ising model</h2>
+      <p>Phase transitions in a classical lattice-spin system.</p>
+    </article>
+  </div>
+</BaseLayout>

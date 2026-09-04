@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Simulations | Your Name">
+  <section class="hero">
+    <p class="eyebrow">Simulations</p>
+    <h1>Interactive computational experiments</h1>
+    <p class="lead">
+      The browser-based lab collection includes stochastic processes, statistical mechanics, and numerical experiments.
+    </p>
+  </section>
+
+  <div class="grid">
+    <article class="card">
+      <h2>Brownian motion</h2>
+      <p>Diffusion and random trajectories in the browser.</p>
+      <a href="/labs/brownian/">Open lab →</a>
+    </article>
+    <article class="card">
+      <h2>Markov chains</h2>
+      <p>Transition matrices, stationary distributions, and mixing examples.</p>
+    </article>
+    <article class="card">
+      <h2>Monte Carlo</h2>
+      <p>Metropolis sampling, acceptance rates, and observable tracking.</p>
+    </article>
+    <article class="card">
+      <h2>Molecular dynamics</h2>
+      <p>Particle motion, force-field models, and time integration experiments.</p>
+    </article>
+  </div>
+</BaseLayout>

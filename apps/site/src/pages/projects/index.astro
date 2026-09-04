@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Projects | Your Name">
+  <section class="hero">
+    <p class="eyebrow">Projects</p>
+    <h1>Software and electronics work</h1>
+    <p class="lead">
+      A portfolio of engineering, scientific software, and reproducible implementation work.
+    </p>
+  </section>
+
+  <div class="grid">
+    <article class="card">
+      <h2>Software</h2>
+      <p>Scientific libraries, simulation engines, and reusable computational tools.</p>
+      <a href="/projects/software/">Open software projects →</a>
+    </article>
+    <article class="card">
+      <h2>Electronics</h2>
+      <p>Hardware experiments, measurement notebooks, and circuit design notes.</p>
+      <a href="/projects/electronics/">Browse electronics →</a>
+    </article>
+    <article class="card">
+      <h2>Open-source code</h2>
+      <p>Repositories, source archives, and technical notes linked to the site.</p>
+      <a href="/docs/">Read documentation →</a>
+    </article>
+  </div>
+</BaseLayout>
