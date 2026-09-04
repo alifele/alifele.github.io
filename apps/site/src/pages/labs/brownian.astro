@@ -1,0 +1,125 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Brownian Motion Laboratory">
+
+  <h1>Brownian Motion</h1>
+
+  <p>
+    Consider the stochastic differential equation
+  </p>
+
+  <p>
+    <strong>dX = √(2D) dW</strong>
+  </p>
+
+  <p>
+    Change the diffusion coefficient and observe the resulting trajectory.
+  </p>
+
+  <label>
+    Diffusion coefficient D:
+    <input
+      id="diffusion"
+      type="range"
+      min="0.1"
+      max="5"
+      step="0.1"
+      value="1"
+    />
+    <span id="diffusion-value">1</span>
+  </label>
+
+  <p>
+    <button id="pause">Pause</button>
+    <button id="reset">Reset</button>
+  </p>
+
+  <canvas
+    id="simulation"
+    width="800"
+    height="450"
+    style="border:1px solid #aaa; max-width:100%;"
+  ></canvas>
+
+</BaseLayout>
+
+<script>
+  const canvas = document.querySelector("#simulation");
+  const ctx = canvas.getContext("2d");
+
+  const slider = document.querySelector("#diffusion");
+  const value = document.querySelector("#diffusion-value");
+
+  const pauseButton = document.querySelector("#pause");
+  const resetButton = document.querySelector("#reset");
+
+  let running = true;
+
+  let x = canvas.width / 2;
+  let y = canvas.height / 2;
+
+  function gaussian() {
+    const u = Math.random();
+    const v = Math.random();
+
+    return Math.sqrt(-2 * Math.log(u)) *
+      Math.cos(2 * Math.PI * v);
+  }
+
+  function reset() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    x = canvas.width / 2;
+    y = canvas.height / 2;
+  }
+
+  function step() {
+
+    if (running) {
+
+      const D = Number(slider.value);
+
+      const scale = Math.sqrt(2 * D);
+
+      const oldX = x;
+      const oldY = y;
+
+      x += scale * gaussian();
+      y += scale * gaussian();
+
+      // periodic boundaries
+
+      if (x < 0) x += canvas.width;
+      if (x > canvas.width) x -= canvas.width;
+
+      if (y < 0) y += canvas.height;
+      if (y > canvas.height) y -= canvas.height;
+
+      ctx.beginPath();
+      ctx.moveTo(oldX, oldY);
+      ctx.lineTo(x, y);
+      ctx.stroke();
+    }
+
+    requestAnimationFrame(step);
+  }
+
+  slider.addEventListener("input", () => {
+    value.textContent = slider.value;
+  });
+
+  pauseButton.addEventListener("click", () => {
+
+    running = !running;
+
+    pauseButton.textContent =
+      running ? "Pause" : "Resume";
+  });
+
+  resetButton.addEventListener("click", reset);
+
+  reset();
+  step();
+</script>

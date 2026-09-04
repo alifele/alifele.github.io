@@ -1,0 +1,13 @@
+---
+title: "Computational Notes"
+---
+
+# Computational Notes
+
+These are executable notes on mathematical and computational topics.
+
+$$
+dX_t = \sqrt{2D}\,dW_t
+$$
+
+I use these notes for reproducible computational experiments.

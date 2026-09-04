@@ -1,0 +1,26 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Computational Notes"
+
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+
+      - href: molecular-simulation.qmd
+        text: Molecular Simulation
+
+      - href: stochastic-processes.qmd
+        text: Stochastic Processes
+
+format:
+  html:
+    toc: true
+    code-fold: true
+    code-tools: true
+
+execute:
+  freeze: auto

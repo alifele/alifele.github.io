@@ -1,0 +1,12 @@
+{
+  "hash": "d71db91b4e9b0fdb42dd4c1ec72909e0",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: \"Brownian Motion\"\njupyter: python3\n---\n\n\n\n\nThe stochastic differential equation is\n\n$$\ndX_t = \\sqrt{2D}\\,dW_t.\n$$\n\nIn two dimensions,\n\n$$\n\\mathbb E\\left[|X_t-X_0|^2\\right]=4Dt.\n$$\n\n::: {#20670c53 .cell execution_count=1}\n``` {.python .cell-code}\nimport numpy as np\n\nD = 1.0\ndt = 0.01\nN = 1000\n\nincrements = np.sqrt(2 * D * dt) * np.random.randn(N)\ntrajectory = np.cumsum(increments)\n\ntrajectory[:10]\n```\n\n::: {.cell-output .cell-output-display execution_count=1}\n```\narray([ 0.25239721,  0.21849919,  0.10743653,  0.02709818, -0.00313533,\n       -0.25136158, -0.25075885, -0.27590238, -0.27772747, -0.33793399])\n```\n:::\n:::\n\n\n",
+    "supporting": [
+      "stochastic-processes_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}
