@@ -1,0 +1,111 @@
+name: Deploy personal site
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v5
+
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22.12.0"
+
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install \
+            jupyter \
+            numpy \
+            matplotlib
+
+
+      - name: Setup Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+
+      - name: Install Astro dependencies
+        working-directory: apps/site
+        run: npm ci
+
+
+      - name: Install Quartz dependencies
+        working-directory: apps/quartz
+        run: |
+          npm ci
+          npx quartz plugin install
+
+
+      - name: Install Emscripten
+        run: |
+          git clone \
+            https://github.com/emscripten-core/emsdk.git \
+            /tmp/emsdk
+
+          cd /tmp/emsdk
+
+          ./emsdk install latest
+          ./emsdk activate latest
+
+
+      - name: Build site
+        shell: bash
+        run: |
+
+          source /tmp/emsdk/emsdk_env.sh
+
+          chmod +x scripts/*.sh
+
+          ./scripts/build-all.sh
+
+
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _build
+
+
+  deploy:
+
+    needs: build
+
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
