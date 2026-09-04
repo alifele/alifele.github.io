@@ -7,22 +7,34 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <p class="eyebrow">About</p>
     <h1>Personal computational website</h1>
     <p class="lead">
-      This site acts as a public laboratory for research, computational notes, software projects, and interactive scientific exploration.
+      A public laboratory for research, notes, software projects, and interactive scientific exploration.
     </p>
+    <div class="quick-nav">
+      <a href="#mission">Mission</a>
+      <a href="#interests">Interests</a>
+      <a href="#contact">Contact</a>
+    </div>
   </section>
 
-  <div class="stack">
-    <article class="card">
+  <section class="reading-section">
+    <article id="mission">
       <h2>Mission</h2>
-      <p>To connect scientific writing, software, and interactive demonstrations into one coherent digital portfolio.</p>
+      <p>To connect scientific writing, software, and interactive demonstrations into one coherent and navigable technical portfolio.</p>
     </article>
-    <article class="card">
-      <h2>Interests</h2>
-      <p>Stochastic processes, statistical mechanics, scientific computing, electronics, and reproducible research.</p>
+
+    <article id="interests">
+      <h2>Research interests</h2>
+      <ul class="muted-list">
+        <li>Stochastic processes</li>
+        <li>Statistical mechanics</li>
+        <li>Scientific computing</li>
+        <li>Electronics and instrumentation</li>
+      </ul>
     </article>
-    <article class="card">
+
+    <article id="contact">
       <h2>Contact</h2>
-      <p>Replace this with your email, institutional affiliation, and social links.</p>
+      <p>Replace this section with your institutional affiliation, email, and professional links.</p>
     </article>
-  </div>
+  </section>
 </BaseLayout>

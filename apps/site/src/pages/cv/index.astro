@@ -7,20 +7,27 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <p class="eyebrow">CV</p>
     <h1>Curriculum vitae</h1>
     <p class="lead">
-      Academic background, research experience, and technical skills in one concise profile.
+      Academic background, research experience, and technical skills in a scannable format.
     </p>
+    <div class="quick-nav">
+      <a href="#education">Education</a>
+      <a href="#experience">Research experience</a>
+      <a href="#skills">Skills</a>
+    </div>
   </section>
 
-  <div class="stack">
-    <article class="card">
+  <section class="reading-section">
+    <article id="education">
       <h2>Education</h2>
-      <p>Doctoral / graduate / undergraduate record goes here.</p>
+      <p>Doctoral / graduate / undergraduate entries should include institution, timeline, and focus area.</p>
     </article>
-    <article class="card">
+
+    <article id="experience">
       <h2>Research experience</h2>
-      <p>Research assistantships, scientific collaborations, and domain-specific projects.</p>
+      <p>Summarize positions, collaborations, and major project outcomes.</p>
     </article>
-    <article class="card">
+
+    <article id="skills">
       <h2>Skills</h2>
       <ul class="tag-list">
         <li>Python</li>
@@ -31,5 +38,5 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <li>Scientific computing</li>
       </ul>
     </article>
-  </div>
+  </section>
 </BaseLayout>

@@ -7,22 +7,38 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <p class="eyebrow">Electronics</p>
     <h1>Engineering notebooks and hardware experiments</h1>
     <p class="lead">
-      This section is intended for schematics, component notes, measurements, and revision history.
+      Hardware documentation with design intent, measurements, and revision history.
     </p>
+    <div class="quick-nav">
+      <a href="#analog">Analog</a>
+      <a href="#embedded">Embedded</a>
+      <a href="#practice">Practice</a>
+    </div>
   </section>
 
-  <div class="stack">
-    <article class="card">
-      <h2>555 timer experiments</h2>
-      <p>Oscillator design, waveform analysis, and behavioural notes.</p>
+  <section class="reading-section">
+    <article id="analog">
+      <h2>Analog experiments</h2>
+      <ul class="muted-list">
+        <li>555 timer and oscillator circuits</li>
+        <li>Filter design and frequency-response analysis</li>
+        <li>Signal path measurements and debugging records</li>
+      </ul>
     </article>
-    <article class="card">
-      <h2>Analog filters</h2>
-      <p>Frequency response analysis and signal-processing experiments.</p>
-    </article>
-    <article class="card">
+
+    <article id="embedded">
       <h2>Embedded systems</h2>
-      <p>Microcontroller experiments, logic probes, and debugging records.</p>
+      <p>Microcontroller and digital logic experiments with reproducible notes.</p>
+      <ul class="muted-list">
+        <li>Firmware testing logs</li>
+        <li>Instrumentation setup and traces</li>
+        <li>Revision history and design decisions</li>
+      </ul>
     </article>
-  </div>
+
+    <article id="practice">
+      <h2>Documentation practice</h2>
+      <p>Each project should include motivation, schematic references, measurements, and lessons learned.</p>
+    </article>
+  </section>
 </BaseLayout>

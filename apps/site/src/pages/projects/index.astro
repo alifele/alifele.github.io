@@ -5,27 +5,34 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 <BaseLayout title="Projects | Your Name">
   <section class="hero">
     <p class="eyebrow">Projects</p>
-    <h1>Software and electronics work</h1>
+    <h1>Software and electronics projects</h1>
     <p class="lead">
-      A portfolio of engineering, scientific software, and reproducible implementation work.
+      Implementation-focused project pages with clear paths to source code, documentation, and experiments.
     </p>
+    <div class="quick-nav">
+      <a href="#software">Software</a>
+      <a href="#electronics">Electronics</a>
+      <a href="#documentation">Documentation</a>
+    </div>
   </section>
 
-  <div class="grid">
-    <article class="card">
-      <h2>Software</h2>
+  <section class="reading-section">
+    <article id="software">
+      <h2>Software projects</h2>
       <p>Scientific libraries, simulation engines, and reusable computational tools.</p>
-      <a href="/projects/software/">Open software projects →</a>
+      <p><a href="/projects/software/">Open software projects →</a></p>
     </article>
-    <article class="card">
-      <h2>Electronics</h2>
-      <p>Hardware experiments, measurement notebooks, and circuit design notes.</p>
-      <a href="/projects/electronics/">Browse electronics →</a>
+
+    <article id="electronics">
+      <h2>Electronics projects</h2>
+      <p>Hardware experiments, measurements, and engineering notebook style documentation.</p>
+      <p><a href="/projects/electronics/">Browse electronics projects →</a></p>
     </article>
-    <article class="card">
-      <h2>Open-source code</h2>
-      <p>Repositories, source archives, and technical notes linked to the site.</p>
-      <a href="/docs/">Read documentation →</a>
+
+    <article id="documentation">
+      <h2>Technical documentation</h2>
+      <p>Project architecture, API notes, validation workflows, and usage guides.</p>
+      <p><a href="/docs/">Read software docs →</a></p>
     </article>
-  </div>
+  </section>
 </BaseLayout>

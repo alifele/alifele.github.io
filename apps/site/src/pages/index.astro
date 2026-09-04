@@ -3,50 +3,70 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="Your Name">
-  <h1>Your Name</h1>
-
-  <p>
-    Researcher interested in mathematics, statistical physics,
-    stochastic simulation, scientific computing and electronics.
-  </p>
+  <section class="hero">
+    <p class="eyebrow">Personal Computational Laboratory</p>
+    <h1>Research, notes, simulations, and technical documentation in one navigable academic website</h1>
+    <p class="lead">
+      This site combines portfolio material, digital-garden notes, reproducible computational writing,
+      software documentation, and interactive scientific laboratories with reading-first design.
+    </p>
+  </section>
 
   <div class="grid">
-    <div class="card">
+    <div class="card span-6">
       <h2>Research</h2>
-      <p>Papers, current projects and research interests.</p>
-      <a href="/research/">Explore →</a>
+      <p>Research themes, active directions, and scientific context.</p>
+      <a href="/research/">Open research overview →</a>
     </div>
 
-    <div class="card">
-      <h2>Software</h2>
-      <p>Scientific software, simulation tools and implementations.</p>
-      <a href="/projects/">Explore →</a>
+    <div class="card span-6">
+      <h2>Papers</h2>
+      <p>Publications, preprints, drafts, and writing artifacts.</p>
+      <a href="/papers/">Read publication area →</a>
     </div>
 
-    <div class="card">
-      <h2>Interactive simulations</h2>
-      <p>
-        Molecular dynamics, stochastic processes and statistical physics.
-      </p>
-      <a href="/simulations/">Explore →</a>
+    <div class="card span-4">
+      <h2>Projects</h2>
+      <p>Software and electronics work with implementation-oriented documentation.</p>
+      <a href="/projects/">Browse projects →</a>
     </div>
 
-    <div class="card">
-      <h2>Electronics</h2>
-      <p>Circuits, measurements and electronics experiments.</p>
-      <a href="/projects/">Explore →</a>
+    <div class="card span-4">
+      <h2>Interactive Labs</h2>
+      <p>Browser-based simulations for stochastic and computational systems.</p>
+      <a href="/labs/">Launch laboratories →</a>
     </div>
 
-    <div class="card">
-      <h2>Notes</h2>
-      <p>My public Obsidian knowledge garden.</p>
-      <a href="/notes/">Open notes →</a>
+    <div class="card span-4">
+      <h2>Quartz Notes</h2>
+      <p>Interconnected digital-garden notes with backlinks and graph navigation.</p>
+      <a href="/notes/">Open notes garden →</a>
     </div>
 
-    <div class="card">
-      <h2>Computational notes</h2>
-      <p>Quarto notebooks and mathematical experiments.</p>
-      <a href="/computational-notes/">Open notes →</a>
+    <div class="card span-4">
+      <h2>Computational Notes</h2>
+      <p>Quarto-based scientific notes with equations and executable examples.</p>
+      <a href="/computational-notes/">Open computational notes →</a>
+    </div>
+
+    <div class="card span-4">
+      <h2>LaTeX Lecture Notes</h2>
+      <p>PDF lecture notes with quick access for reading and reference.</p>
+      <a href="/latex-notes/">Browse PDF archive →</a>
+    </div>
+
+    <div class="card span-4">
+      <h2>Software Docs</h2>
+      <p>Documentation for scientific software and reusable research tools.</p>
+      <a href="/docs/">Open docs section →</a>
     </div>
   </div>
+
+  <section class="section">
+    <h2>Reading-first navigation</h2>
+    <p class="lead">
+      The top navigation is organized by content intent: research, implementation, simulation, and references.
+      Each section is scoped for quick discovery and low-friction reading.
+    </p>
+  </section>
 </BaseLayout>

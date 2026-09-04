@@ -5,25 +5,46 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 <BaseLayout title="Papers | Your Name">
   <section class="hero">
     <p class="eyebrow">Papers</p>
-    <h1>Publications, preprints, and writing</h1>
+    <h1>Publications, preprints, and technical writing</h1>
     <p class="lead">
-      This page is the scaffold for published work, manuscripts, and technical writing.
+      A reading-oriented archive of publication material, manuscripts, and presentation outputs.
     </p>
+    <div class="quick-nav">
+      <a href="#published">Published</a>
+      <a href="#preprints">Preprints</a>
+      <a href="#talks">Talks</a>
+    </div>
   </section>
 
-  <div class="stack">
-    <article class="card">
-      <h2>Example publication</h2>
-      <p><strong>Title:</strong> A computational study of stochastic transport and sampling.</p>
-      <p><strong>Status:</strong> Draft / placeholder</p>
+  <section class="reading-section">
+    <article id="published">
+      <h2>Published work</h2>
+      <p>Peer-reviewed papers and finalized manuscripts are listed here with links and context.</p>
+      <ul class="muted-list">
+        <li>Topic overview and abstract summary</li>
+        <li>Link to journal or archive version</li>
+        <li>Supporting code and reproducibility notes</li>
+      </ul>
     </article>
-    <article class="card">
-      <h2>Preprints</h2>
-      <p>Link to working drafts, technical notes, and arXiv-ready summaries.</p>
+
+    <article id="preprints">
+      <h2>Preprints and drafts</h2>
+      <p>In-progress manuscripts, technical reports, and draft notes for active research projects.</p>
+      <ul class="muted-list">
+        <li>Method-focused drafts</li>
+        <li>Exploratory computational reports</li>
+        <li>Iteration history and updates</li>
+      </ul>
     </article>
-    <article class="card">
+
+    <article id="talks">
       <h2>Talks and presentations</h2>
-      <p>Conferences, invited lectures, and workshops connected to the research narrative.</p>
+      <p>Slides, talk notes, and workshop material tied to research and software projects.</p>
+      <ul class="muted-list">
+        <li>Conference talks and invited lectures</li>
+        <li>Research-group presentations</li>
+        <li>Tutorial sessions with demonstration links</li>
+      </ul>
     </article>
-  </div>
+  </section>
 </BaseLayout>

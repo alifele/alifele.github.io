@@ -9,34 +9,40 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <p class="lead">
       This section organizes my research themes, current projects, and computational methods.
     </p>
+    <div class="quick-nav">
+      <a href="#themes">Themes</a>
+      <a href="#methods">Methods</a>
+      <a href="#current-focus">Current focus</a>
+    </div>
   </section>
-
-  <div class="grid">
-    <article class="card">
-      <h2>Stochastic processes</h2>
-      <p>Random walks, diffusion, Markov chains, and non-equilibrium dynamics.</p>
-      <a href="/simulations/">Explore simulations →</a>
+  <section class="reading-section" id="themes">
+    <article>
+      <h2>Research themes</h2>
+      <p>Stochastic processes, statistical mechanics, molecular simulation, and scientific computing are the core threads.</p>
+      <ul class="muted-list">
+        <li>Random walks, Markov processes, and diffusion</li>
+        <li>Equilibrium and non-equilibrium statistical models</li>
+        <li>Sampling algorithms and numerical experiments</li>
+      </ul>
     </article>
-    <article class="card">
-      <h2>Statistical mechanics</h2>
-      <p>Monte Carlo methods, ensembles, phase transitions, and sampling diagnostics.</p>
-      <a href="/projects/">View project library →</a>
-    </article>
-    <article class="card">
+    <article id="methods">
       <h2>Computational methods</h2>
-      <p>Numerical experiments, reproducible notes, and scientific software.</p>
-      <a href="/computational-notes/">See notes →</a>
+      <p>Method development is paired with reproducible workflows and explanatory notes.</p>
+      <ul class="muted-list">
+        <li><a href="/simulations/">Interactive simulation demos</a></li>
+        <li><a href="/computational-notes/">Quarto computational notes</a></li>
+        <li><a href="/notes/">Quartz concept network</a></li>
+      </ul>
     </article>
-  </div>
-
-  <section class="section">
-    <h2>Current focus</h2>
-    <ul class="tag-list">
-      <li>Markov chains</li>
-      <li>Molecular simulation</li>
-      <li>Monte Carlo</li>
-      <li>Scientific computing</li>
-      <li>Interactive visualization</li>
-    </ul>
+    <article id="current-focus">
+      <h2>Current focus</h2>
+      <ul class="tag-list">
+        <li>Markov chains</li>
+        <li>Molecular simulation</li>
+        <li>Monte Carlo</li>
+        <li>Scientific computing</li>
+        <li>Interactive visualization</li>
+      </ul>
+    </article>
   </section>
 </BaseLayout>

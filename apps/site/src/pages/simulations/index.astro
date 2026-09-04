@@ -5,29 +5,44 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 <BaseLayout title="Simulations | Your Name">
   <section class="hero">
     <p class="eyebrow">Simulations</p>
-    <h1>Interactive computational experiments</h1>
+    <h1>Interactive computational simulations</h1>
     <p class="lead">
-      The browser-based lab collection includes stochastic processes, statistical mechanics, and numerical experiments.
+      A structured collection of browser-based scientific demos for exploration, explanation, and learning.
     </p>
+    <div class="quick-nav">
+      <a href="#live-labs">Live labs</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="#methods">Methods</a>
+    </div>
   </section>
 
-  <div class="grid">
-    <article class="card">
-      <h2>Brownian motion</h2>
-      <p>Diffusion and random trajectories in the browser.</p>
-      <a href="/labs/brownian/">Open lab →</a>
+  <section class="reading-section">
+    <article id="live-labs">
+      <h2>Live simulation labs</h2>
+      <p>Interactive pages with adjustable parameters and direct visual feedback.</p>
+      <ul class="muted-list">
+        <li><a href="/labs/brownian/">Brownian motion lab</a></li>
+        <li><a href="/labs/markov-chain/">Markov chain lab</a></li>
+      </ul>
     </article>
-    <article class="card">
-      <h2>Markov chains</h2>
-      <p>Transition matrices, stationary distributions, and mixing examples.</p>
+
+    <article id="roadmap">
+      <h2>Simulation roadmap</h2>
+      <p>Upcoming additions include Monte Carlo, Ising models, and molecular dynamics demos.</p>
+      <ul class="muted-list">
+        <li>Metropolis and MCMC diagnostics</li>
+        <li>Lattice spin systems and phase transitions</li>
+        <li>Particle-based dynamics and observables</li>
+      </ul>
     </article>
-    <article class="card">
-      <h2>Monte Carlo</h2>
-      <p>Metropolis sampling, acceptance rates, and observable tracking.</p>
+
+    <article id="methods">
+      <h2>Computational methods</h2>
+      <p>Each simulation links to source code and mathematical context for reproducible understanding.</p>
+      <ul class="muted-list">
+        <li><a href="/computational-notes/">Quarto notes for derivations and methods</a></li>
+        <li><a href="/notes/">Quartz notes for conceptual network links</a></li>
+      </ul>
     </article>
-    <article class="card">
-      <h2>Molecular dynamics</h2>
-      <p>Particle motion, force-field models, and time integration experiments.</p>
-    </article>
-  </div>
+  </section>
 </BaseLayout>

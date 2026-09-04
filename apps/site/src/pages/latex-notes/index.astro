@@ -8,31 +8,47 @@ import { latexNotes } from '../../data/latexNotes';
     <p class="eyebrow">LaTeX Notes</p>
     <h1>Lecture notes (PDF archive)</h1>
     <p class="lead">
-      This page lists PDF lecture notes authored in LaTeX. Click a title to open it in a new browser tab.
+      Structured lecture notes authored in LaTeX and served as PDF files.
     </p>
+    <div class="quick-nav">
+      <a href="#catalog">Catalog</a>
+      <a href="#usage">How to add</a>
+      <a href="#paths">Folder paths</a>
+    </div>
   </section>
 
-  <div class="stack">
-    {latexNotes.map((note) => (
-      <article class="card">
-        <h2>{note.title}</h2>
-        <p><strong>Course:</strong> {note.course}</p>
-        <p><strong>Semester:</strong> {note.semester}</p>
-        <p>{note.description}</p>
-        <p>
-          <a href={note.path} target="_blank" rel="noopener noreferrer">
-            Open PDF in a new tab →
-          </a>
-        </p>
-      </article>
-    ))}
-  </div>
+  <section class="reading-section">
+    <article id="catalog">
+      <h2>Lecture note catalog</h2>
+      <div class="stack">
+        {latexNotes.map((note) => (
+          <article class="card">
+            <h3>{note.title}</h3>
+            <p><strong>Course:</strong> {note.course}</p>
+            <p><strong>Semester:</strong> {note.semester}</p>
+            <p>{note.description}</p>
+            <p>
+              <a href={note.path} target="_blank" rel="noopener noreferrer">
+                Open PDF in a new tab →
+              </a>
+            </p>
+          </article>
+        ))}
+      </div>
+    </article>
 
-  <section class="section">
-    <h2>Where to place your PDF notes</h2>
-    <p>
-      Put each lecture note PDF under <code>apps/site/public/latex-notes/</code> with folders per subject or course.
-      Then update <code>apps/site/src/data/latexNotes.ts</code> to list each note.
-    </p>
+    <article id="usage">
+      <h2>How to add your own notes</h2>
+      <ol class="muted-list">
+        <li>Put PDFs under <code>apps/site/public/latex-notes/</code> in course/topic folders.</li>
+        <li>Add an item in <code>apps/site/src/data/latexNotes.ts</code>.</li>
+        <li>Run <code>./scripts/build-astro.sh</code>.</li>
+      </ol>
+    </article>
+
+    <article id="paths">
+      <h2>Recommended folder structure</h2>
+      <p>Use one folder per course or subject so links stay readable and organized.</p>
+    </article>
   </section>
 </BaseLayout>

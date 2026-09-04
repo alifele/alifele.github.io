@@ -7,24 +7,37 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <p class="eyebrow">Labs</p>
     <h1>Interactive laboratory notebooks</h1>
     <p class="lead">
-      Short, focused experiments for exploring stochastic systems and computational models.
+      Guided simulation pages that pair interaction with conceptual explanation.
     </p>
+    <div class="quick-nav">
+      <a href="#available">Available labs</a>
+      <a href="#how-to-read">How to use</a>
+      <a href="#next">Next labs</a>
+    </div>
   </section>
 
-  <div class="grid">
-    <article class="card">
-      <h2>Brownian motion</h2>
-      <p>Diffusion as a random walk driven by Gaussian increments.</p>
-      <a href="/labs/brownian/">Launch →</a>
+  <section class="reading-section">
+    <article id="available">
+      <h2>Available labs</h2>
+      <ul class="muted-list">
+        <li><a href="/labs/brownian/">Brownian motion</a></li>
+        <li><a href="/labs/markov-chain/">Markov chains</a></li>
+      </ul>
     </article>
-    <article class="card">
-      <h2>Markov chains</h2>
-      <p>Two-state transitions and state dependence in stochastic systems.</p>
-      <a href="/labs/markov-chain/">Launch →</a>
+
+    <article id="how-to-read">
+      <h2>How to use a lab page</h2>
+      <ul class="muted-list">
+        <li>Read the model description first</li>
+        <li>Adjust one parameter at a time</li>
+        <li>Observe trajectory/observable changes</li>
+        <li>Compare with linked notes for theory</li>
+      </ul>
     </article>
-    <article class="card">
-      <h2>Ising model</h2>
-      <p>Phase transitions in a classical lattice-spin system.</p>
+
+    <article id="next">
+      <h2>Planned additions</h2>
+      <p>Ising model, Metropolis-Hastings demos, and molecular simulation visualizations are planned next.</p>
     </article>
-  </div>
+  </section>
 </BaseLayout>
