@@ -1,0 +1,24 @@
+---
+title: "Statistical Mechanics"
+format:
+  html:
+    toc: true
+---
+
+# Statistical Mechanics
+
+The canonical ensemble assigns probability
+
+$$
+P(x) = \frac{e^{-\beta E(x)}}{Z}
+$$
+
+where $Z$ is the partition function.
+
+This formalism underlies Monte Carlo, molecular simulation, and the study of equilibrium distributions.
+
+## Connections
+
+- [[markov-chains.qmd]]
+- [[molecular-simulation.qmd]]
+- [[stochastic-processes.qmd]]

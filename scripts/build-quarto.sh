@@ -10,3 +10,9 @@ fi
 
 cd "$ROOT/content/quarto"
 quarto render
+
+rm -rf "$ROOT/apps/site/public/computational-notes"
+mkdir -p "$ROOT/apps/site/public/computational-notes"
+cp -a "$ROOT/content/quarto/_site/." "$ROOT/apps/site/public/computational-notes/"
+
+echo "Quarto output synced into apps/site/public/computational-notes"

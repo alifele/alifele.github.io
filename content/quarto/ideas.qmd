@@ -1,0 +1,18 @@
+---
+title: "Ideas"
+format:
+  html:
+    toc: true
+---
+
+# Ideas
+
+This section captures future directions and exploratory questions.
+
+## Topics to explore
+
+- self-assembly simulations
+- reaction-diffusion systems
+- interactive browser-based educational tools
+- more advanced Monte Carlo samplers
+- browser-based WASM scientific kernels

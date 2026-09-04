@@ -1,0 +1,18 @@
+---
+title: "Ensemble Methods"
+format:
+  html:
+    toc: true
+---
+
+# Ensemble Methods
+
+Ensemble methods are widely used to represent probability distributions over states.
+
+A simulation may estimate an observable as
+
+$$
+\langle A \rangle \approx \frac{1}{N} \sum_{n=1}^N A(x_n)
+$$
+
+This idea connects directly to Monte Carlo, importance sampling, and other numerical integration techniques.

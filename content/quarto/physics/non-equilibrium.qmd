@@ -1,0 +1,19 @@
+---
+title: "Non-equilibrium Systems"
+format:
+  html:
+    toc: true
+---
+
+# Non-equilibrium Systems
+
+A non-equilibrium system is driven away from equilibrium by a gradient, forcing, or kinetic process.
+
+Examples include:
+
+- diffusion with external drift
+- reaction-diffusion systems
+- driven lattice models
+- irreversible transport processes
+
+The dynamics can often be expressed in terms of a flux or a drift-diffusion equation.

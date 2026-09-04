@@ -15,3 +15,9 @@ if [ ! -d node_modules ]; then
 fi
 
 npm run quartz -- build
+
+rm -rf "$ROOT/apps/site/public/notes"
+mkdir -p "$ROOT/apps/site/public/notes"
+cp -a "$ROOT/apps/quartz/public/." "$ROOT/apps/site/public/notes/"
+
+echo "Quartz output synced into apps/site/public/notes"

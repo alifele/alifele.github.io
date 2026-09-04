@@ -1,4 +1,4 @@
-name: Deploy Astro to GitHub Pages
+name: Deploy personal website to GitHub Pages
 
 on:
   push:
@@ -20,12 +20,30 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v7
 
-      - name: Build Astro site
-        uses: withastro/action@v6
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          path: ./apps/site
-          package-manager: npm
           node-version: 22
+          cache: npm
+          cache-dependency-path: |
+            apps/site/package-lock.json
+            apps/quartz/package-lock.json
+
+      - name: Install Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Install dependencies
+        run: |
+          cd apps/site && npm ci
+          cd ../quartz && npm ci
+
+      - name: Build full site
+        run: ./scripts/build-all.sh
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: apps/site/dist
 
   deploy:
     needs: build

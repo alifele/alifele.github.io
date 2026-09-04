@@ -1,0 +1,20 @@
+---
+title: "Measurement and Instrumentation"
+format:
+  html:
+    toc: true
+---
+
+# Measurement and Instrumentation
+
+Successful scientific work depends on disciplined measurement and careful interpretation.
+
+A good measurement workflow typically contains:
+
+1. calibration
+2. data acquisition
+3. signal processing
+4. validation
+5. interpretation
+
+This is a natural companion to scientific computing and hardware experimentation.

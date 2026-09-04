@@ -1,0 +1,23 @@
+---
+title: "Research Journal"
+format:
+  html:
+    toc: true
+---
+
+# Research Journal
+
+This document captures short notes, questions, and project direction.
+
+## Themes
+
+- stochastic dynamics
+- simulations and observables
+- computational experiments
+- reproducible science
+
+## Working questions
+
+- Which observable best captures a phenomenon?
+- How do changes in parameters affect convergence?
+- How should the model be compared with theory?

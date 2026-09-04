@@ -1,0 +1,135 @@
+[
+  {
+    "objectID": "ensemble-methods.html",
+    "href": "ensemble-methods.html",
+    "title": "Ensemble Methods",
+    "section": "",
+    "text": "Ensemble Methods\nEnsemble methods are widely used to represent probability distributions over states.\nA simulation may estimate an observable as\n\\[\n\\langle A \\rangle \\approx \\frac{1}{N} \\sum_{n=1}^N A(x_n)\n\\]\nThis idea connects directly to Monte Carlo, importance sampling, and other numerical integration techniques."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Computational Notes",
+    "section": "",
+    "text": "This section demonstrates reproducible scientific writing using Quarto. It is intended for mathematical derivations, executable examples, and numerical experiments.\n\n\n\nBrownian motion and diffusion\nMarkov chains and transition matrices\nMonte Carlo methods\nStatistical mechanics models\nSimulation and validation notes\n\n\n\n\n\\[\n\\frac{\\partial p}{\\partial t} = D \\frac{\\partial^2 p}{\\partial x^2}\n\\]\nThis diffusion equation is the continuum analogue of a random walk and a key concept in many simulation studies."
+  },
+  {
+    "objectID": "index.html#topics",
+    "href": "index.html#topics",
+    "title": "Computational Notes",
+    "section": "",
+    "text": "Brownian motion and diffusion\nMarkov chains and transition matrices\nMonte Carlo methods\nStatistical mechanics models\nSimulation and validation notes"
+  },
+  {
+    "objectID": "index.html#example",
+    "href": "index.html#example",
+    "title": "Computational Notes",
+    "section": "",
+    "text": "\\[\n\\frac{\\partial p}{\\partial t} = D \\frac{\\partial^2 p}{\\partial x^2}\n\\]\nThis diffusion equation is the continuum analogue of a random walk and a key concept in many simulation studies."
+  },
+  {
+    "objectID": "physics/statistical-mechanics.html",
+    "href": "physics/statistical-mechanics.html",
+    "title": "Statistical Mechanics",
+    "section": "",
+    "text": "The canonical ensemble assigns probability\n\\[\nP(x) = \\frac{e^{-\\beta E(x)}}{Z}\n\\]\nwhere \\(Z\\) is the partition function.\nThis formalism underlies Monte Carlo, molecular simulation, and the study of equilibrium distributions.\n\n\n\n[[markov-chains.qmd]]\n[[molecular-simulation.qmd]]\n[[stochastic-processes.qmd]]"
+  },
+  {
+    "objectID": "physics/statistical-mechanics.html#connections",
+    "href": "physics/statistical-mechanics.html#connections",
+    "title": "Statistical Mechanics",
+    "section": "",
+    "text": "[[markov-chains.qmd]]\n[[molecular-simulation.qmd]]\n[[stochastic-processes.qmd]]"
+  },
+  {
+    "objectID": "phase-transitions.html",
+    "href": "phase-transitions.html",
+    "title": "Phase Transitions",
+    "section": "",
+    "text": "Phase Transitions\nPhase transitions are changes in collective behavior as control parameters change.\nA simple Ising-like model can illustrate competition between energy and entropy:\n\\[\nH = -J \\sum_{\\langle i,j \\rangle} s_i s_j\n\\]\nThe resulting behavior depends on temperature, geometry, and interaction strength."
+  },
+  {
+    "objectID": "markov-chains.html",
+    "href": "markov-chains.html",
+    "title": "Markov Chains",
+    "section": "",
+    "text": "Markov Chains\nA Markov chain describes transitions between states with probabilities that depend only on the current state.\n\\[\nP(X_{n+1}=j \\mid X_n=i) = P_{ij}\n\\]\nFor a 2-state chain,\n\\[\nP = \\begin{pmatrix}\n1-\\alpha & \\alpha \\\\\n\\beta & 1-\\beta\n\\end{pmatrix}\n\\]\nThe long-time behavior of the chain depends on the structure of this matrix, especially the stationary distribution and mixing properties."
+  },
+  {
+    "objectID": "ideas.html",
+    "href": "ideas.html",
+    "title": "Ideas",
+    "section": "",
+    "text": "This section captures future directions and exploratory questions.\n\n\n\nself-assembly simulations\nreaction-diffusion systems\ninteractive browser-based educational tools\nmore advanced Monte Carlo samplers\nbrowser-based WASM scientific kernels"
+  },
+  {
+    "objectID": "ideas.html#topics-to-explore",
+    "href": "ideas.html#topics-to-explore",
+    "title": "Ideas",
+    "section": "",
+    "text": "self-assembly simulations\nreaction-diffusion systems\ninteractive browser-based educational tools\nmore advanced Monte Carlo samplers\nbrowser-based WASM scientific kernels"
+  },
+  {
+    "objectID": "stochastic-processes.html",
+    "href": "stochastic-processes.html",
+    "title": "Stochastic Processes",
+    "section": "",
+    "text": "Stochastic Processes\nA simple diffusion model can be written as\n\\[\n\\mathrm{d}X_t = \\sqrt{2D}\\,\\mathrm{d}W_t.\n\\]\nThis form models a Brownian motion with diffusion coefficient \\(D\\).\n\n\nCode\nimport numpy as np\n\nD = 1.0\ndt = 0.01\nN = 2000\n\nincrements = np.sqrt(2 * D * dt) * np.random.randn(N)\ntrajectory = np.cumsum(increments)\n\nprint(trajectory[:10])\nprint(f\"Mean displacement: {trajectory[-1]:.3f}\")\n\n\n[-0.01004194 -0.17156798 -0.07883248  0.02580013  0.01271594  0.01535814\n  0.03177248  0.17546716  0.00026302 -0.11499746]\nMean displacement: -7.837\n\n\nThis example can be expanded with plots, parameter sweeps, and more detailed diagnostics."
+  },
+  {
+    "objectID": "molecular-simulation.html",
+    "href": "molecular-simulation.html",
+    "title": "Molecular Simulation",
+    "section": "",
+    "text": "Molecular simulation combines statistical mechanics with numerical integration to estimate system behavior.\nThe central challenge is to sample configurations from a distribution such as\n\\[\n\\pi(x) \\propto e^{-\\beta U(x)}.\n\\]\nThis supports methods such as Metropolis Monte Carlo and molecular dynamics.\n\n\n\nestimate equilibrium averages\nstudy structural properties\ncompare simulation and theory\nvisualize trajectories and observables"
+  },
+  {
+    "objectID": "molecular-simulation.html#typical-goals",
+    "href": "molecular-simulation.html#typical-goals",
+    "title": "Molecular Simulation",
+    "section": "",
+    "text": "estimate equilibrium averages\nstudy structural properties\ncompare simulation and theory\nvisualize trajectories and observables"
+  },
+  {
+    "objectID": "research-journal.html",
+    "href": "research-journal.html",
+    "title": "Research Journal",
+    "section": "",
+    "text": "This document captures short notes, questions, and project direction.\n\n\n\nstochastic dynamics\nsimulations and observables\ncomputational experiments\nreproducible science\n\n\n\n\n\nWhich observable best captures a phenomenon?\nHow do changes in parameters affect convergence?\nHow should the model be compared with theory?"
+  },
+  {
+    "objectID": "research-journal.html#themes",
+    "href": "research-journal.html#themes",
+    "title": "Research Journal",
+    "section": "",
+    "text": "stochastic dynamics\nsimulations and observables\ncomputational experiments\nreproducible science"
+  },
+  {
+    "objectID": "research-journal.html#working-questions",
+    "href": "research-journal.html#working-questions",
+    "title": "Research Journal",
+    "section": "",
+    "text": "Which observable best captures a phenomenon?\nHow do changes in parameters affect convergence?\nHow should the model be compared with theory?"
+  },
+  {
+    "objectID": "programming/scientific-python.html",
+    "href": "programming/scientific-python.html",
+    "title": "Scientific Python",
+    "section": "",
+    "text": "Scientific Python\nScientific Python combines numerical libraries and reproducible workflows.\nimport numpy as np\n\nx = np.linspace(0, 1, 200)\ny = np.sin(2 * np.pi * x)\nThis style is excellent for exploratory analysis, simulation validation, and plotting results."
+  },
+  {
+    "objectID": "physics/non-equilibrium.html",
+    "href": "physics/non-equilibrium.html",
+    "title": "Non-equilibrium Systems",
+    "section": "",
+    "text": "Non-equilibrium Systems\nA non-equilibrium system is driven away from equilibrium by a gradient, forcing, or kinetic process.\nExamples include:\n\ndiffusion with external drift\nreaction-diffusion systems\ndriven lattice models\nirreversible transport processes\n\nThe dynamics can often be expressed in terms of a flux or a drift-diffusion equation."
+  },
+  {
+    "objectID": "electronics/instrumentation.html",
+    "href": "electronics/instrumentation.html",
+    "title": "Measurement and Instrumentation",
+    "section": "",
+    "text": "Measurement and Instrumentation\nSuccessful scientific work depends on disciplined measurement and careful interpretation.\nA good measurement workflow typically contains:\n\ncalibration\ndata acquisition\nsignal processing\nvalidation\ninterpretation\n\nThis is a natural companion to scientific computing and hardware experimentation."
+  }
+]

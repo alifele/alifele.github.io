@@ -1,0 +1,19 @@
+---
+title: "Scientific Python"
+format:
+  html:
+    toc: true
+---
+
+# Scientific Python
+
+Scientific Python combines numerical libraries and reproducible workflows.
+
+```python
+import numpy as np
+
+x = np.linspace(0, 1, 200)
+y = np.sin(2 * np.pi * x)
+```
+
+This style is excellent for exploratory analysis, simulation validation, and plotting results.
